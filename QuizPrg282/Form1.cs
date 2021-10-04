@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace QuizPrg282
 {
@@ -15,6 +16,17 @@ namespace QuizPrg282
         public Form1()
         {
             InitializeComponent();
+        }
+        
+        public void ReadTheFile()
+        {
+            string[] lines = File.ReadAllLines("File.txt");
+            listBox1.Items.AddRange(lines);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReadTheFile();
         }
     }
 }
